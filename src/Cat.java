@@ -19,7 +19,12 @@ public class Cat {
 	// mouth starts about 40% from left edge of head
 	private static final int MOUTH_X = HEAD_DIMENSION/5 * 2;
 	private static final int MOUTH_Y = HEAD_DIMENSION/5 * 3;
-	
+	//Hat width and length
+	private static final int HAT_HEIGHT = HEAD_DIMENSION ;
+	private static final int HAT_WIDTH = 20 ;
+	//Hat X and Y positions
+	private static final int HAT_Y = HEAD_DIMENSION - 60 ;
+	private static final int HAT_X = HEAD_DIMENSION - 50 ;
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
 	{
@@ -42,8 +47,12 @@ public class Cat {
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
 		g2.setColor(Color.black);
+		//Draw hat
+		g2.setColor(Color.cyan);
+		g2.fillRect(HAT_X, HAT_Y, HAT_HEIGHT, HAT_WIDTH);
 		// Meow text appears below cat head, +10 places below 
 		// so it doesn't overlap the drawing
+		g2.setColor(Color.gray);
 		g2.drawString("Mr.Meow aka Puss in Boots", catX, catY+HEAD_DIMENSION+10);	
 	}
 }
